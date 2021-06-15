@@ -1,0 +1,5 @@
+package com.java.jwt.entities.InterfaceDAO;
+
+public interface IUserDao {
+
+}

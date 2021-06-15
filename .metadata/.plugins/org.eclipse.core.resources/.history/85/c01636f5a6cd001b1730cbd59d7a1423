@@ -1,0 +1,55 @@
+package com.java.jwt.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.stereotype.Service;
+
+import com.java.jwt.entities.User;
+import com.java.jwt.entities.InterfaceDAO.IUserDao;
+import com.java.jwt.interfaceServices.IUserService;
+
+@Service
+public class UserService implements IUserService{
+
+	@Autowired
+	private IUserDao userDao;
+	
+	@Override
+	public List<User> findAll() {
+		// TODO Auto-generated method stub
+		return (List<User>) userDao.findAll();
+	}
+
+	@Override
+	public User create(User user) {
+		// TODO Auto-generated method stub
+		return userDao.save(user);
+	}
+
+	@Override
+	public User update(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public User findUserByUserPass(User user) {
+		try {
+			User usuario = userDao.findUserByUserPass(user.getUserName(), user.getPassword());
+			//List<GrantedAuthority> autorities = user.getRol().;
+			return usuario;
+		}catch(Exception e) {
+			System.out.println("Error: "+e.getMessage() + " : "+e.getCause().getMessage());
+			return new User();
+		}
+	}
+
+}

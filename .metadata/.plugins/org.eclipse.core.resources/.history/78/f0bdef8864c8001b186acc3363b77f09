@@ -1,0 +1,5 @@
+package com.java.jwt.entities;
+
+public class User {
+
+}

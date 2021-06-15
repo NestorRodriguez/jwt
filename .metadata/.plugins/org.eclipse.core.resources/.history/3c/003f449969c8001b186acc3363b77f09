@@ -1,0 +1,10 @@
+package com.java.jwt.services;
+
+import org.springframework.stereotype.Service;
+
+import com.java.jwt.interfaceServices.IUserService;
+
+@Service
+public class UserService implements IUserService{
+
+}

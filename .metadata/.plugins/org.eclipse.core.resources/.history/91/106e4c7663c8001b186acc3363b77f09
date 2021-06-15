@@ -1,0 +1,40 @@
+package com.java.jwt;
+
+import java.io.Serializable;
+
+@Entity
+@Table(name="ROLES")
+public class Rol implements Serializable{
+
+	
+	private long id;
+	
+	private String  description;
+
+	public Rol() {
+		super();
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	@Override
+	public String toString() {
+		return "Rol [id=" + id + ", description=" + description + "]";
+	}
+	
+	
+}

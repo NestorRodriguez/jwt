@@ -1,0 +1,12 @@
+package com.java.jwt;
+
+import java.io.Serializable;
+
+public class Rol implements Serializable{
+
+	
+	private long id;
+	
+	private String  description;
+	
+}

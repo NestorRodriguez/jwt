@@ -1,0 +1,26 @@
+package com.java.jwt.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.java.jwt.entities.User;
+import com.java.jwt.entities.InterfaceDAO.IUserDao;
+import com.java.jwt.interfaceServices.IUserService;
+
+public class UserServiceCRUD implements IUserService {
+	
+	@Autowired
+	private IUserDao userDao;
+	
+	@Override
+	public List<User> findAll() {
+		return (List<User>) userDao.findAll();
+	}
+
+	@Override
+	public User create(User user) {
+		return userDao.save(user);
+	}
+
+}
